@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://ep-morning-water-a1icb7z3.ap-southeast-1.aws.neon.tech:5432/school-system?sslmode=require
+    username: school-system_owner
+    password: gnMs5uH1IRAd
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+server:
+  port: 8084
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
