@@ -1,0 +1,46 @@
+Config Server
+cd  {to ->}config-server
+mvn spring-boot:run
+
+Eureka Server
+cd {to ->}eureka-server
+mvn spring-boot:run
+
+-- If Wanted to Run the Service --
+# Jalankan student-service
+cd {to ->}student-service
+mvn spring-boot:run
+
+# Jalankan course-service
+cd {to ->}course-service
+mvn spring-boot:run
+
+# Jalankan teacher-service
+cd {to ->}teacher-service
+mvn spring-boot:run
+
+# Jalankan enrollment-service
+cd {to ->}enrollment-service
+mvn spring-boot:run
+
+last run API Gateway
+cd {to ->}gateway-service
+mvn spring-boot:run
+
+-- curl Commands --
+# Get All Students #
+curl -X GET http://localhost:8080/students
+# Add Student #
+curl -X POST http://localhost:8080/students -H "Content-Type: application/json" -d '{"name":"Arlingga Cahya","email":"arlinggar@gmail.com"}'
+# Get All Courses #
+curl -X GET http://localhost:8080/courses
+# Add Course #
+curl -X POST http://localhost:8080/courses -H "Content-Type: application/json" -d '{"name":"Math 101","description":"Introduction to Mathematics"}'
+# Get All Teachers #
+curl -X GET http://localhost:8080/teachers
+# Add Teacher #
+curl -X POST http://localhost:8080/teachers -H "Content-Type: application/json" -d '{"name":"Ramdhana Cahya","email":"ramdhanacahya@gmail.com"}'
+# Get All Enrollments #
+curl -X GET http://localhost:8080/enrollments
+# Add Enrollment #
+curl -X POST http://localhost:8080/enrollments -H "Content-Type: application/json" -d '{"studentId":1,"courseId":1}'
